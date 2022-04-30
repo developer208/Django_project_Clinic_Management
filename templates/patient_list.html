@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient-List</title>
+    <link rel="stylesheet" href="/static/CSS/patient_list.css">
+</head>
+<body>
+    <div class="main">
+
+        <div class="div1">
+         
+            <div class="nav-link">
+                <div class="pratik">
+                    <a href="#">
+                        
+                        <img src="/static/IMAGES/Untitled design.png" alt="LOGO" height="70px" width="105px">
+                    </a>
+                </div>
+
+                <nav>
+                    <ul class="sarvesh">
+                        <li><a href="/" id="nav-items">Home</li></a>
+                        <li><a href="patientlist" id="nav-items">Patient_list</li></a>
+                        <li><a href="contact" id="nav-items">Contact</li></a>
+                        <li><a href="login" id="nav-items">Admin</li></a>
+                    </ul>
+                </nav>
+                
+            </div>
+        </div>
+        <div class="div2">
+           
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for v in dbvalue %}
+
+                <tr>
+
+                    <td> {{v.id}}</td>
+                    <td>{{v.name}}</td>
+                    <td>{{v.gender}}</td>
+                </tr>
+                {% endfor %}
+                    
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <link rel="stylesheet" href="/static/CSS/login.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>As Receptionist</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-control">
+                <input type="text" required name="uname">
+                <label>username</label>
+            </div>
+            <div class="form-control">
+                <input type="password" required name="passwd">
+                <label>Password</label>
+            </div>
+            <div>
+                <a href="login"><button class="btn" type="submit">
+                        Login
+                    </button></a>
+            </div>
+            <p class="text">Don't have an account?
+                <a href="register" target="_self" class="clr"><u >Register</u></a>
+            </p>
+
+        </form>
+    </div>
+    <script src="/static/JAVASCRIPT/login.js"></script>
+</body>
+
+</html>

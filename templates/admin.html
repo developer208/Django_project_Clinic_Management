@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receptionalist</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/admin.css' %}" />
+</head>
+<body style="background-image:url('{% static 'IMAGES/background.jpg' %}')">
+    <div class="main">
+        <div class="div1">
+            <h1>Checking Status</h1>
+            <div class="div3">
+                <label for="">previous checked patient no: {{previous}}</label>
+                <!-- <input type="text" > -->
+            </div>
+            <br>
+            
+            <div class="div3">
+                <label for="">currently checking patient no: {{current}}</label>
+                <!-- <input type="text" > -->
+            </div>
+            <br>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="div3">
+                    <label for="">doctor is checking patient no:</label>
+                    <input type="text" name="email">
+                    <br>
+                    <button> Send Mail</button>
+                    <button> <a href="del">Truncate table </a></button>
+                    
+                </div>
+            </form>
+            <br>
+            <div class="ab" style="width: 400px; height: 40px; background-color: #BDBDBD; margin-top: 180px; margin-left: 45px; border-radius: 8px; text-align: center;">
+                <div class="bc" style="position:absolute; margin-left: 70px; margin-top: 10px; ">
+                    <label for="" >Email Status:- {{status}} </label>
+
+                </div>
+                
+
+            </div>
+           
+
+            
+
+
+        </div>
+
+        <div class="div2">
+           
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for v in dbvalue %}
+
+                    <tr>
+            
+                        <td> {{v.id}}</td>
+                        <td>{{v.name}}</td>
+                        <td>{{v.phone_number}}</td>
+                        <td>{{v.email}}</td>
+                        <td>{{v.gender}}</td>
+                    </tr>
+                    {% endfor %}
+                   
+                    
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+    
+    
+</body>
+</html>

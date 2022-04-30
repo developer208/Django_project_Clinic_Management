@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: #0F2557;
+            color:rgb(246, 237, 251);
+
+        }
+        th,td{
+            border: 1px black solid;
+            cursor: pointer;
+        
+
+        }
+        th{
+            background-color: #28559A;
+        }
+        td{
+            background-color: #3778c2;
+        }
+        .bg{
+            margin-top: 20px;
+        }
+        .container{
+            margin-top: 20px;
+        }
+        input{
+            width: 20px;
+            text-align: center;
+        }
+        button{
+            margin-top: 20px;
+        }
+        .container{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1> Patient Details</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Gender</th>
+        </tr>
+        {% for v in dbvalue %}
+
+        <tr>
+
+            <td> {{v.id}}</td>
+            <td>{{v.name}}</td>
+            <td>{{v.phone_number}}</td>
+            <td>{{v.email}}</td>
+            <td>{{v.gender}}</td>
+        </tr>
+        {% endfor %}
+       
+    </table>
+    <div class="container">
+
+        
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for=""> Doctor is checking </label>
+            <br>
+            <input type="text" name="feild1" id="feild1">
+            <br>
+            <button><a href="page2" type="submit"> send email</a></button>
+        </form>
+        
+        
+    </div>
+
+</body>
+
+</html>

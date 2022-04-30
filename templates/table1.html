@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            background-color: #0F2557;
+            color: rgb(246, 237, 251);
+
+        }
+        table{
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px black solid;
+            cursor: pointer;
+
+
+        }
+
+        th {
+            background-color: #28559A;
+        }
+
+        td {
+            background-color: #3778c2;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+
+
+        }
+
+        .div2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: rgb(36, 109, 173);
+            padding: 15px;
+            font-family: inherit;
+            font-size: 20px;
+            border: 0;
+            border-radius: 5px;
+            margin-bottom: 20px;
+
+
+        }
+
+        button a {
+            background-color: rgb(36, 109, 173);
+        }
+
+        button:focus {
+            outline: 0;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+
+
+        <div class="table">
+
+
+            <h1>Patient List</h1>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                </tr>
+                {% for v in dbvalue %}
+
+                <tr>
+
+                    <td> {{v.id}}</td>
+                    <td>{{v.name}}</td>
+                    <td>{{v.gender}}</td>
+                </tr>
+                {% endfor %}
+
+
+
+
+            </table>
+        </div>
+
+
+    </div>
+
+    <div class="div2">
+
+        <button type="button">
+            <a href="patient" target="_self">Book Appointment</a>
+        </button>
+    </div>
+    
+    
+
+</body>
+
+</html>

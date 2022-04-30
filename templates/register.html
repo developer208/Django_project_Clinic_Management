@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+    <link rel="stylesheet" href="/static/CSS/register.css">
+</head>
+<body>
+    <div class="container">  
+        <h1> Please Register</h1>  
+        <form method="POST" >
+            {% csrf_token %}
+         <div class="form-control">  
+          <input type="text" required id ="" name="username">  
+          <label>username</label>  
+        </div>  
+        <div class="form-control">  
+           <input type="email" required id ="" name ="emailid">  
+           <label>Email</label>  
+          </div> 
+         <div class="form-control">  
+          <input type="password" required id ="" name ="password1">  
+          <label>Password</label>  
+         </div> 
+         <div class="form-control">  
+            <input type="password" required id ="" name ="password2">  
+            <label>Confirm Password</label>  
+           </div>  
+         <div class="form-control">  
+            <input type="password" required id ="" name="pin">  
+            <label>pin</label>  
+           </div>  
+         <button class="btn" type="submit">Create Account</button>   
+         <p class="text"> <a href="login" target="_self"> <u>Go Back</u></a></p>
+        
+        </form>  
+       </div> 
+     
+       <script src="/static/JAVASCRIPT/register.js"></script>   
+       
+</body>
+</html>
